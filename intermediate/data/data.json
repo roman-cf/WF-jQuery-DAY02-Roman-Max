@@ -1,0 +1,64 @@
+var cart = [{
+	"itemId": 0,
+	"name": "",
+	"imgUrl": "",
+	"price": 9.99,
+	"status": 2
+},
+{
+	"itemId": 1,
+	"name": "milk",
+	"imgUrl": "milch.jpg",
+	"price": 1.99,
+	"status": 4
+},
+{
+	"itemId": 2,
+	"name": "french cheese",
+	"imgUrl": "cheese.jpg",
+	"price": 5.99,
+	"status": 1
+},
+{
+	"itemId": 3,
+	"name": "lemon",
+	"imgUrl": "lemon.jpg",
+	"price": 0.99,
+	"status": 2
+},
+{
+	"itemId": 4,
+	"name": "apple",
+	"imgUrl": "apfel.jpg",
+	"price": 2.49,
+	"status": 2
+},
+{
+	"itemId": 5	,
+	"name": "orange juice",
+	"imgUrl": "orangensaft.jpg",
+	"price": 2.69,
+	"status": 2
+},
+{
+	"itemId": 6,
+	"name": "oreo",
+	"imgUrl": "oreo.jpg",
+	"price": 1.24,
+	"status": 10
+},
+{
+	"itemId": 7,
+	"name": "toblerone",
+	"imgUrl": "toblerone.jpg",
+	"price": 2.79,
+	"status": 2
+},
+{
+	"itemId": 8,
+	"name": "water",
+	"imgUrl": "wasser.jpg",
+	"price": 0.39,
+	"status": 12
+}
+]
