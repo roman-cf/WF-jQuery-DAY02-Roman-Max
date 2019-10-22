@@ -1,17 +1,23 @@
 var path = "img/";
 
-for (var i=1; i<cart.length; i++){
+var cart = JSON.stringify(cartInventory);
+	cart = JSON.parse(cart);
+for (let item of cart){
+	item.cartStatus = 0;
+}
 
-var pId = cart[i].itemId;
+for (var i=1; i<cartInventory.length; i++){
+
+var pId = cartInventory[i].itemId;
 
 $("main").append("<div class='product'></div>");
 $("main>div:nth-child("+i+")").attr("id", "product"+pId);
 
 $("#product"+pId).append("<p class='names'></p>");
-$("main > div:nth-child("+i+") p:first").text(cart[i].name);
+$("main > div:nth-child("+i+") p:first").text(cartInventory[i].name);
 
 $("#product"+pId).append("<img class='pix'>");
-$("main>div:nth-child("+i+") img:first").attr("src", path + cart[i].imgUrl);
+$("main>div:nth-child("+i+") img:first").attr("src", path + cartInventory[i].imgUrl);
 
 $("#product"+pId).append("<div class='statusContainer'></div>");
 $("#product"+pId+">div:first").attr("id", "stCont"+pId);
@@ -19,11 +25,34 @@ $("#product"+pId+">div:first").attr("id", "stCont"+pId);
 $("#stCont"+pId).append("<input class='addBtn' type='button' value='add to cart'>")
 $("#stCont"+pId).append("<p class='price'></p>");
 $("#stCont"+pId+" p.price").attr("id", "price"+pId);
+$("#stCont"+pId+" input.addBtn").attr("id", "btn"+pId);
 
-$("#price"+pId).text(cart[i].price + " €");
+$("#price"+pId).text(cartInventory[i].price + " €");
 
 };
 
-$(".addBtn").on("click", function(){
-	
+$(".addBtn").on("click", function(e){
+	shopping(e.target.id);
 }  )
+
+console.log(cart)
+
+function shopping(e){
+	var temp = Number(e.slice(3))
+	
+	for (let item of cart){
+		if (item.itemId == temp){
+			
+			if (item.status > item.cartStatus){
+				item.cartStatus ++;
+			}else{
+				alert("nicht genug vorrätig");
+			}
+		}
+
+	}
+	//console.log(cart);
+	console.log(cartInventory);
+
+
+}
