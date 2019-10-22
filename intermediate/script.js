@@ -45,14 +45,26 @@ function shopping(e){
 			
 			if (item.status > item.cartStatus){
 				item.cartStatus ++;
+				cartBuilder(item);
 			}else{
 				alert("nicht genug vorrätig");
 			}
 		}
-
 	}
 	//console.log(cart);
 	console.log(cartInventory);
+}
 
 
+function cartBuilder(item){
+	$("#shoppingCart").append(`
+								<div class="cartItem"> 
+									<img src=${path + item.imgUrl}>
+									<h4> ${item.name}</h4>
+									<p> ${item.price}</p>
+									<input type="Number" value="${item.cartStatus}">
+									<p> ${item.price * item.cartStatus}
+								</div>
+								`)
+	$("#modealBackground").css("display","flex");
 }
