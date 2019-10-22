@@ -1,4 +1,4 @@
-var cart = [{
+var cartInventory = [{
 	"itemId": 0,
 	"name": "",
 	"imgUrl": "",
